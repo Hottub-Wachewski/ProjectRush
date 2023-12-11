@@ -8,7 +8,6 @@ class PlayerUser:
         self._trainingField = []
         self._grave = []
         self._life = []
-        self._deck = 0
         self._energy = 0
         self._battleGround = []
     def resetPlayer(self):
@@ -27,6 +26,12 @@ class PlayerUser:
             self._life.insert(0, self._mainDeck[0])
             self._mainDeck.pop(0)
             i += 1
+    def explainCards(self, choice):
+        print("name", self._hand[choice + 1].get_name)
+        print("classes", self._hand[choice + 1].get_properties)
+        print("power", self._hand[choice + 1].get_power)
+        print("cost", self._hand[choice + 1].get_cost)
+        print(self._hand[choice + 1].get_effects)
 class PlayingCards:
     def __init__(self, name, power, cost, properties, effect):
         self._name = name
